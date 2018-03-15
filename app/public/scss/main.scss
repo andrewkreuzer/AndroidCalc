@@ -1,0 +1,185 @@
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfZBw1xU1rKptJj_0jans920.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+* {
+  margin: 0px;
+}
+
+body {
+  font-family: roboto, sans-serif;
+}
+
+.calculator {
+  .screen {
+    width: auto;
+    height: 30vh;
+    background-color: #F5F5F5;
+    .calculation {
+      text-align: right;
+      font-size: 8.5vh;
+      #equation {
+        padding-top: 10vh;
+        padding-right: 5vw;
+        color: #757575;
+      }
+      #answer {
+        text-align: right;
+        padding: 0;
+        padding-right: 4vw;
+        font-size: 5vh;
+        color: #9E9E9E;
+      }
+    }
+  }
+  .buttons {
+    .numbers {
+      float: left;
+      display: inline;
+      background-color: #757575;
+      button {
+        width: 24vw;
+        height: 17.5vh;
+        font-size: 5vh;
+        float: left;
+        border: none;
+        background-color: #757575;
+        color: #F5F5F5;
+      }
+    }
+    .functions {
+      display: inline;
+      float: left;
+      width: 22vw;
+      background-color: #9E9E9E;
+      button {
+        width: 23vw;
+        height: 14vh;
+        font-size: 5vh;
+        float: left;
+        border: none;
+        background-color: #9E9E9E;
+        color: #F5F5F5;
+        &:first-child {
+          font-size: 3vh;
+        }
+      }
+    }
+    .scientific {
+      display: inline;
+      float: left;
+      background-color: #1DE9B6;
+      width: 6vw;
+      height: 70vh;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .calculator {
+    margin: 10% auto;
+    width: 300px;
+    height: 450px;
+    border-radius: 6px;
+    cursor: arrow;
+    .screen {
+      width: auto;
+      height: 130px;
+      background-color: #F5F5F5;
+      .calculation {
+        text-align: right;
+        color: #9E9E9E;
+        #equation {
+          padding-top: 47px;
+          padding-right: 10px;
+          font-size: 35px;
+        }
+        #answer {
+          text-align: right;
+          padding: 0;
+          padding-right: 15px;
+          font-size: 25px;
+        }
+      }
+    }
+    .buttons {
+      height: 320px;
+      color: #F5F5F5;
+      .numbers {
+        float: left;
+        display: inline;
+        button {
+          width: 72px;
+          height: 80px;
+          font-size: 22px;
+          float: left;
+          border: none;
+          background-color: #757575;
+        }
+      }
+      .functions {
+        display: inline;
+        float: left;
+        width: 66px;
+        button {
+          width: 66px;
+          height: 64px;
+          font-size: 22px;
+          float: left;
+          border: none;
+          background-color: #9E9E9E;
+          &:first-child {
+            font-size: 14px;
+          }
+        }
+      }
+      .scientific {
+        display: inline;
+        float: left;
+        background-color: #1DE9B6;
+        width: 18px;
+        height: 320px;
+        .show {
+          transform: translateX(100%);
+          position: fixed;
+          -webkit-animation: anim 3.5s 1;
+          animation: anim 3.5s 1;
+        }
+        @-webkit-keyframes anim {
+          0% {
+            transform: translateX(100%);
+          }
+          14.28% {
+            transform: translateX(0);
+          }
+          85.71% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+        @keyframes anim {
+          0% {
+            transform: translateX(100%);
+          }
+          14.28% {
+            transform: translateX(0);
+          }
+          85.71% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+      }
+    }
+  }
+}
